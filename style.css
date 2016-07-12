@@ -1,0 +1,53 @@
+input, body {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.card {
+    width: 500px;
+    height: 300px;
+    border: solid black 2px;
+    margin: auto;
+    background-color: cornsilk;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-text {
+    font-size: 2em;
+}
+
+/*.card-text-valign p {*/
+    /*right: center;*/
+/*}*/
+
+.front-back-label {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+}
+
+.flip-align {
+    padding: 20px;
+}
+
+.flip {
+    display: block;
+    width: 100px;
+
+    padding: 10px;
+    margin: auto;
+    font-size: 1.2em;
+}
