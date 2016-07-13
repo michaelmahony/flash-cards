@@ -7,7 +7,7 @@ input, body {
     margin: auto;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     text-align: center;
 }
 
@@ -15,7 +15,7 @@ h1, h2, h3 {
     width: 500px;
     height: 300px;
     border: solid black 2px;
-    margin: auto;
+    margin: 30px auto;
     background-color: cornsilk;
     position: relative;
     display: flex;
@@ -55,6 +55,7 @@ h1, h2, h3 {
 
 .card-text {
     font-size: 2em;
+    text-align: center;
 }
 
 .container {
@@ -68,11 +69,18 @@ h1, h2, h3 {
     /*right: center;*/
 /*}*/
 
-.front-back-label {
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-}
+/*.front-back-label {*/
+    /*position: absolute;*/
+    /*bottom: 0;*/
+    /*right: 30px;*/
+/*}*/
+
+/*.flipped .front-back-label {*/
+    /*-webkit-backface-visibility: hidden;*/
+    /*-moz-backface-visibility: hidden;*/
+    /*-o-backface-visibility: hidden;*/
+    /*backface-visibility: hidden;*/
+/*}*/
 
 .flip-align {
     padding: 20px;
@@ -85,13 +93,15 @@ h1, h2, h3 {
     padding: 10px;
     margin: auto;
     font-size: 1.2em;
+    border-radius: 6px;
 }
 
 .grade-btns {
     display: flex;
-    margin: auto;
+    margin: 10px auto;
     justify-content: space-around;
     border: solid grey 2px;
+    border-radius: 10px;
     padding: 10px;
     max-width: 500px;
 
@@ -104,6 +114,8 @@ h1, h2, h3 {
     font-size: 1.2em;
     width: 100px;
     margin: auto;
+
+    border-radius: 6px;
 }
 
 .incorrect {

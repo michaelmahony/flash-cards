@@ -1,37 +1,69 @@
-function showText(text, label) {
-    $(".card-text").html(text);
-    $(".front-back-label").html(label);
+function showText(div ,text, label) {
+    $(div + " .card-text").html(text);
+    $(div + " .front-back-label").html(label);
 }
 
 function serveCard (theCard) {
-    $(".flip").on("click", function () {
-        $('.card').toggleClass('flipped');
-    })
+
 
     // Show the front text
-    // showText(theCard.front, 'Front');
+    showText(".front", theCard.front, 'Front');
+    showText(".back", theCard.back, 'Back');
 
 
-    // var state = 'front';
-    // $(".card").flip();
+    var state = 'front';
 
-    // $(".flip").on("click", function () {
-        // $(".card").flip();
+    $(".flip").on("click", function () {
+        if ($(".flip").val() == 'Show Back') {
+            $(".flip").val('Show Front');
+            // If first time being clicked, show the grading buttons
+            if ($(".grade-btns").css('visibility') == 'hidden') {
+                $(".grade-btns").css('visibility', 'visible');
+            }
 
-
-        // if ($(".flip").val() == 'Show Back') {
-        //     showText(theCard.back, 'Back');
-        //     $(".flip").val('Show Front');
-        //
-        // } else if ($(".flip").val() == 'Show Front') {
-        //     showText(theCard.front, 'Front');
-        //     $(".flip").val('Show Back');
-        // }
-    // });
+        } else if ($(".flip").val() == 'Show Front') {
+            // showText(theCard.front, 'Front');
+            $(".flip").val('Show Back');
+        }
+    });
 
 }
 
+function showNextCard(counter, cardObjArray) {
+    counter++;
 
+    $('.card').removeClass('flipped');
+
+    theCard = cardObjArray[cardObjArray.length % counter];
+
+    serveCard(theCard);
+
+
+    console.log(theCard.front);
+    console.log(theCard.back);
+    console.log(theCard.history);
+
+
+
+
+    $(".incorrect").on("click", function () {
+        theCard.setHistory(0);
+        console.log(theCard.history);
+        showNextCard(counter, cardObjArray);
+
+    })
+
+    // $(".shakey").on("click", function () {
+    //     theCard.setHistory(0);
+    //     console.log(theCard.history);
+    //
+    // })
+    // $(".correct").on("click", function () {
+    //     theCard.setHistory(1);
+    //     console.log(theCard.history);
+    //
+    // })
+}
 
 $('document').ready(function () {
     console.log("JS Loaded");
@@ -100,30 +132,10 @@ $('document').ready(function () {
 
     console.log(cardObjArray);
 
-    theCard = cardObjArray[0];
+    showNextCard(0, cardObjArray);
 
-    serveCard(theCard);
-
-
-
-    console.log(theCard.front);
-    console.log(theCard.back);
-    console.log(theCard.history);
-
-
-    $(".incorrect").on("click", function () {
-        theCard.setHistory(0);
-        console.log(theCard.history);
-
+    $(".flip").on("click", function () {
+        $('.card').toggleClass('flipped');
     })
-    $(".shakey").on("click", function () {
-        theCard.setHistory(0);
-        console.log(theCard.history);
 
-    })
-    $(".correct").on("click", function () {
-        theCard.setHistory(1);
-        console.log(theCard.history);
-
-    })
 })
