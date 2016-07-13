@@ -21,66 +21,21 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /*For flip*/
-    -webkit-transition: -webkit-transform 1s;
-    -moz-transition: -moz-transform 1s;
-    -o-transition: -o-transform 1s;
-    transition: transform 1s;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-}
-
-.card div {
-    /*For flip*/
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.card .back {
-    -webkit-transform: rotateY( 180deg );
-    -moz-transform: rotateY( 180deg );
-    -o-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
-}
-
-.card.flipped {
-    -webkit-transform: rotateY( 180deg );
-    -moz-transform: rotateY( 180deg );
-    -o-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
 }
 
 .card-text {
     font-size: 2em;
-    text-align: center;
-}
-
-.container {
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    -o-perspective: 800px;
-    perspective: 800px;
 }
 
 /*.card-text-valign p {*/
     /*right: center;*/
 /*}*/
 
-/*.front-back-label {*/
-    /*position: absolute;*/
-    /*bottom: 0;*/
-    /*right: 30px;*/
-/*}*/
-
-/*.flipped .front-back-label {*/
-    /*-webkit-backface-visibility: hidden;*/
-    /*-moz-backface-visibility: hidden;*/
-    /*-o-backface-visibility: hidden;*/
-    /*backface-visibility: hidden;*/
-/*}*/
+.front-back-label {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+}
 
 .flip-align {
     padding: 20px;
