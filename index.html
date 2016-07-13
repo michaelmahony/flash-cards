@@ -7,27 +7,56 @@
     <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script src="./card.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+  <script src="./card.js"></script>
     <script src="./script.js"></script>
 </head>
 <body>
     <div class="content">
         <h1>Ecce Romani Chapter 4</h1>
-        <h3>Card 1 of 18</h3>
+        <h3>18 Cards in this set</h3>
+
+      <section class="container">
         <div class="card">
-            <div class="card-text">
-                Puella
-            </div>
-            <h3 class="front-back-label">Front</h3>
+          <div class="front">
+              <div class="card-text">THIS IS THE FRONT</div>
+              <h3 class="front-back-label"></h3>
+          </div>
+          <div class="back">
+            <div class="card-text">THIS IS THE BACK</div>
+            <h3 class="front-back-label"></h3>
+          </div>
         </div>
+      </section>
+
+      <!--<div class="card">-->
+        <!--<div class="front">-->
+          <!--<div class="front-content">-->
+            <!--Front content-->
+          <!--</div>-->
+
+
+        <!--</div>-->
+
+        <!--<div class="back">-->
+          <!--<div class="back-content">-->
+            <!--Back content-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+
         <div class="flip-align">
             <input type="button" value="Show Back" class="flip">
         </div>
         <div class="grade-btns">
-          <input type="button" value="Incorrect" class="flip">
-          <input type="button" value="Shakey" class="flip">
-          <input type="button" value="Correct" class="flip">
+          <input type="button" value="Incorrect" class="incorrect">
+          <input type="button" value="Shakey" class="shakey">
+          <input type="button" value="Correct" class="correct">
         </div>
+
 
     </div>
 </body>

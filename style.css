@@ -17,16 +17,51 @@ h1, h2, h3 {
     border: solid black 2px;
     margin: auto;
     background-color: cornsilk;
-
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /*For flip*/
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+}
+
+.card div {
+    /*For flip*/
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card .back {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+
+.card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
 }
 
 .card-text {
     font-size: 2em;
+}
+
+.container {
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
 }
 
 /*.card-text-valign p {*/
@@ -50,4 +85,35 @@ h1, h2, h3 {
     padding: 10px;
     margin: auto;
     font-size: 1.2em;
+}
+
+.grade-btns {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    border: solid grey 2px;
+    padding: 10px;
+    max-width: 500px;
+
+    visibility: hidden;
+}
+
+.grade-btns input {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.2em;
+    width: 100px;
+    margin: auto;
+}
+
+.incorrect {
+    background-color: orangered;
+}
+
+.shakey {
+    background-color: orange;
+}
+
+.correct {
+    background-color: green;
 }
