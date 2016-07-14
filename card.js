@@ -14,7 +14,7 @@ function Card(front, back, history) {
     }
 
     // A calculated score representing strength of knowledge
-    self.composite_score = 0;
+    this.composite_score = 0;
 
     // Appends the new score to this.history and limits length to 5
 }
@@ -26,7 +26,7 @@ function Card(front, back, history) {
 // 'Shaky' is a response option, but it is recorded as incorrect.
 Card.prototype.setHistory = function(score) {
     // Make score a number
-    score = parseInt(score)
+    score = parseFloat(score);
 
     // Ensure that it is not NAN
     if (isNaN(score) == true) {
@@ -34,14 +34,29 @@ Card.prototype.setHistory = function(score) {
     }
 
     // Ensure that the value is valid
-    if (score >= 0 && score <= 1) {
+    // if (score >= 0 && score <= 1) {
 
-        // Append to the front of history array.
-        this.history.unshift(score);
+    // Append to the front of history array.
+    this.history.unshift(score);
 
-        // If the new length of the array is > 5, drop the oldest response
-        if (this.history.length > 5) {
-            this.history.pop()
-        }
+    // If the new length of the array is > 5, drop the oldest response
+    if (this.history.length > 5) {
+        this.history.pop();
     }
+
+
+    this.makeComposite();
+}
+
+
+Card.prototype.makeComposite = function() {
+    var BASE = 1.25;
+    var composite = 0;
+    // Compose the composite score. Most recent answers have greatest rank
+    for (var i = 0; i<this.history.length; i++) {
+        var exponent = this.history.length - i;
+        var marginalIncrease = this.history[i] * Math.pow(BASE, exponent);
+        composite += marginalIncrease;
+    }
+    this.composite_score = composite;
 }

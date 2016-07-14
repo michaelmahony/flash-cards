@@ -11,6 +11,11 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
+table {
+    margin: auto;
+    padding: 0 0 15px 0;
+}
+
 .card {
     width: 500px;
     height: 300px;
@@ -51,7 +56,19 @@ h1, h2, h3, h4 {
     border-radius: 6px;
 }
 
-.grade-btns {
+.start-over {
+    display: block;
+    width: 100px;
+
+    padding: 10px;
+    margin: auto;
+    font-size: 1.2em;
+    border-radius: 6px;
+
+    visibility: hidden;
+}
+
+.grade-btns, .mode-btns {
     display: flex;
     margin: 10px auto;
     justify-content: space-around;
@@ -59,11 +76,27 @@ h1, h2, h3, h4 {
     border-radius: 10px;
     padding: 10px;
     max-width: 500px;
+}
 
-    visibility: hidden;
+.grade-btns {
+    visibility: collapse;
+}
+
+.results {
+    visibility: collapse;
 }
 
 .grade-btns input {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.2em;
+    width: 100px;
+    margin: auto;
+
+    border-radius: 6px;
+}
+
+.mode-btns input {
     display: inline-block;
     padding: 10px;
     font-size: 1.2em;

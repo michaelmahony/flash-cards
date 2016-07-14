@@ -17,19 +17,57 @@
         <h1 class="setTitle">FlashCards</h1>
         <h3 class="subtitle"></h3>
 
+        <div class="mode-btns">
+          <h4>Chose a mode: </h4>
+          <input type="button" value="Study Mode" class="study-mode">
+          <input type="button" value="Test Mode" class="test-mode">
+        </div>
+
+
         <div class="card">
             <div class="card-text"></div>
             <h3 class="front-back-label"></h3>
         </div>
 
         <div class="flip-align">
-            <input type="button" value="Show Back" class="flip">
+          <input type="button" value="Show Back" class="flip">
+          <input type="button" value="Start Over" class="start-over" >
         </div>
+
         <div class="grade-btns">
           <h4>Grade your response</h4>
           <input type="button" value="Incorrect" class="incorrect">
-          <input type="button" value="Shakey" class="shakey">
+          <input type="button" value="Shaky" class="shakey">
           <input type="button" value="Correct" class="correct">
+        </div>
+
+        <div class="results">
+          <h2>Your results</h2>
+
+          <div class="results-correct">
+            <h3>You got the following correct!</h3>
+            <table class="results-correct">
+              <tr>
+                <th>Front</th>
+                <th>Back</th>
+              </tr>
+
+            </table>
+          </div>
+
+          <div class="results-incorrect">
+            <h3>You need to study these!</h3>
+            <table class="results-incorrect">
+              <tr>
+                <th>Front</th>
+                <th>Back</th>
+              </tr>
+
+            </table>
+          </div>
+
+
+
         </div>
 
 
