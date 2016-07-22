@@ -1,3 +1,10 @@
+/// My comments will have 3 slashes
+/// Remarkable and excellent design, modularity, organization, and naming practices. Grading and reading your code was surprisingly pleasurable due to how wonderfully clean your code is. :D :D :D
+
+/// I have a few short comments, but other than that, that there are few comments I have speaks to the strength of your code. I noticed a few loose ends, but that is simply the hallmark of tinkering. Try to think of the project presentation as "production deployment" -- this helps us devs with presentability for sure, but more importantly with managing scope-creep and getting out the MVP
+
+/// I'm not sure where the score is being calculated, however, but I recall that you said you were tweaking this a bit
+
 function showText(div ,text, label) {
     $(div + " .card-text").html(text);
     $(div + " .front-back-label").html(label);
@@ -34,11 +41,12 @@ function showNextCard(counter, cardObjArray) {
 
     $('.card').removeClass('flipped');
 
+    /// Global variable here... use var instead
     theCard = cardObjArray[cardObjArray.length % counter];
 
     serveCard(theCard);
 
-
+    /// Remove debugging statements in "production"
     console.log(theCard.front);
     console.log(theCard.back);
     console.log(theCard.history);
@@ -50,7 +58,6 @@ function showNextCard(counter, cardObjArray) {
         theCard.setHistory(0);
         console.log(theCard.history);
         showNextCard(counter, cardObjArray);
-
     })
 
     // $(".shakey").on("click", function () {
@@ -73,6 +80,7 @@ $('document').ready(function () {
         setTitle: "Ecce Romani Chapter 1",
         setAuthor: "Flavia",
         setDescription: "Vocabulary from chapter one of Ecce Romani, Book 1",
+        /// I may be missing somehting, but I think the history property may be slightly redunant here since your Card constructor creates card objects with a history, although, in the constructor it is of course linking this property with the constructor's history property. If this is in fact slightly redundant, you can repurpose cardSet.cards to be cardSet.cardText
         cards: [
             {
                 front: 'Puella',
