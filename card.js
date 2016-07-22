@@ -29,6 +29,7 @@ Card.prototype.setHistory = function(score) {
     score = parseInt(score)
 
     // Ensure that it is not NAN
+    /// when would score be a NaN? I suspect this is a vestigial debugging/err handling block
     if (isNaN(score) == true) {
         return;
     }
